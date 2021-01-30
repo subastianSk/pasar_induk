@@ -1,0 +1,86 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+?><!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title><?php echo $title; ?> | <?php echo get_store_name(); ?></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">
+	
+	<link rel="icon" href="<?php echo base_url('assets/uploads/sites/favicon.png'); ?>">
+
+    <link rel="stylesheet" href="<?php echo get_theme_uri('css/open-iconic-bootstrap.min.css', 'pasarkita'); ?>">
+    <link rel="stylesheet" href="<?php echo get_theme_uri('css/animate.css', 'pasarkita'); ?>">
+    
+    <link rel="stylesheet" href="<?php echo get_theme_uri('css/owl.carousel.min.css', 'pasarkita'); ?>">
+    <link rel="stylesheet" href="<?php echo get_theme_uri('css/owl.theme.default.min.css', 'pasarkita'); ?>">
+    <link rel="stylesheet" href="<?php echo get_theme_uri('css/magnific-popup.css', 'pasarkita'); ?>">
+
+    <link rel="stylesheet" href="<?php echo get_theme_uri('css/aos.css', 'pasarkita'); ?>">
+
+	<link rel="stylesheet" href="<?php echo get_theme_uri('css/ionicons.min.css', 'pasarkita'); ?>">
+	<link rel="stylesheet" href="<?php echo get_theme_uri('js/plugins/@fortawesome/fontawesome-free/css/all.min.css', 'argon'); ?>">
+
+    <link rel="stylesheet" href="<?php echo get_theme_uri('css/bootstrap-datepicker.css', 'pasarkita'); ?>">
+    <link rel="stylesheet" href="<?php echo get_theme_uri('css/jquery.timepicker.css', 'pasarkita'); ?>">
+
+    <link rel="stylesheet" href="<?php echo get_theme_uri('css/flaticon.css', 'pasarkita'); ?>">
+    <link rel="stylesheet" href="<?php echo get_theme_uri('css/icomoon.css', 'pasarkita'); ?>">
+	<link rel="stylesheet" href="<?php echo get_theme_uri('css/style.css', 'pasarkita'); ?>">
+
+	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/toastr/toastr.min.css'); ?>">
+	
+	<script src="<?php echo get_theme_uri('js/jquery.min.js', 'pasarkita'); ?>"></script>
+	<script src="<?php echo get_theme_uri('js/jquery-migrate-3.0.1.min.js', 'pasarkita'); ?>"></script>
+  </head>
+  <body class="goto-here">
+		
+    <nav class="navbar navbar-expand-lg navbar-light ftco_navbar  ftco-navbar-light" id="ftco-navbar" data-aos="fade-down">
+	    <div class="container">
+	      <a class="navbar-brand" href="<?php echo base_url(); ?>"><img src="<?=base_url()?>logo.png"  /></a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+        </button>
+        
+ 
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active"><a href="<?php echo site_url('pages/belanja'); ?>" class="nav-link">Belanja</a></li>
+                       
+
+            
+            
+            
+	        
+
+
+	          <li class="nav-item"><a href="<?php echo site_url('customer/promo'); ?>" class="nav-link">Promo</a></li>
+              
+              <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" >Akun</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown05">
+				  <?php if ( is_login() && is_customer()) : ?>
+				  <a class="dropdown-item" href="<?php echo site_url('customer'); ?>">Dashboard</a>
+				  <a class="dropdown-item" href="<?php echo site_url('customer/orders'); ?>">Pesanan</a>
+           <a class="dropdown-item" href="<?php echo site_url('customer/payments/confirm'); ?>">Pembayaran</a>
+
+				  <div class="divider"></div>
+				  <a class="dropdown-item" href="<?php echo site_url('auth/logout'); ?>">Keluar</a>
+				  <?php else : ?>
+              	  <a class="dropdown-item" href="<?php echo site_url('auth/login'); ?>">Masuk</a>
+				  <a class="dropdown-item" href="<?php echo site_url('auth/register'); ?>">Daftar</a>
+				  <?php endif; ?>
+              </div>
+            </li>
+	          <li class="nav-item cta cta-colored"><a href="<?php echo site_url('shop/cart'); ?>" class="nav-link"><span class="icon-shopping_cart"></span>[<span class="cart-item-total">0</span>]</a></li>
+
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+	<!-- END nav -->
+
